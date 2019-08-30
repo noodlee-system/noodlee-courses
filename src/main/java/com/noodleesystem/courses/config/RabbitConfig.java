@@ -1,4 +1,4 @@
-package com.noodleesystem.template.config;
+package com.noodleesystem.courses.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

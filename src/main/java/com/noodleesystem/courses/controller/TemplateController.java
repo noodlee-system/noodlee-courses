@@ -1,23 +1,20 @@
-package com.noodleesystem.template.controller;
+package com.noodleesystem.courses.controller;
 
 import java.text.MessageFormat;
 import java.util.List;
 
-import com.noodleesystem.template.exception.EmptyQueueException;
+import com.noodleesystem.courses.exception.EmptyQueueException;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.noodleesystem.template.model.User;
-import com.noodleesystem.template.repository.UserRepository;
-import org.springframework.web.client.HttpClientErrorException;
+import com.noodleesystem.courses.model.User;
+import com.noodleesystem.courses.repository.UserRepository;
 import serilogj.Log;
 
 @RestController
-@RequestMapping("/api")
 public class TemplateController {
     final static String queueName = "template_queue";
 
@@ -27,7 +24,7 @@ public class TemplateController {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    @GetMapping("/users")
+    @GetMapping("/test")
     List<User> getAllUsers() {
         return usersRepository.findAll();
 	}

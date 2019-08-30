@@ -15,8 +15,8 @@ RUN mvn -s ./settings.xml package -DskipTests=true
 # STEP 2 - SERVE JAVA APPLICATION USING JRE
 FROM java:8
 
-COPY --from=builder /home/app/target/template-1.0.jar /usr/local/lib/template-service.jar
+COPY --from=builder /home/app/target/courses-1.0.jar /usr/local/lib/courses-service.jar
 
 EXPOSE 8080
 
-ENTRYPOINT [ "java", "-jar", "/usr/local/lib/template-service.jar" ]
+ENTRYPOINT [ "java", "-jar", "/usr/local/lib/courses-service.jar" ]
